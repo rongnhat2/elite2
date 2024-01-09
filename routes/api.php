@@ -28,12 +28,11 @@ Route::post('/cancel_booking', 'Customer\BookingController@delete')->name('custo
 
 
 
-
 Route::get('/get_list_location', 'Admin\HotelController@get')->name('admin.room.get'); 
 Route::get('/get_detail_location', 'Admin\HotelController@find_one')->name('admin.room.get'); 
 
+Route::get('/get_list_booking', 'Admin\BookingController@get')->name('admin.booking.get'); 
 Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
-
 
 Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.login'); 
 
