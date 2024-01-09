@@ -26,6 +26,7 @@ Route::get('/get_list_booking-room', 'Customer\BookingController@get')->name('cu
 Route::post('/booking-room', 'Customer\BookingController@create')->name('customer.booking.create'); 
 Route::post('/cancel_booking', 'Customer\BookingController@delete')->name('customer.booking.delete'); 
 
+Route::post('/search', 'Admin\TourController@get_search')->name('customer.tour.search'); 
 
 
 Route::get('/get_list_location', 'Admin\HotelController@get')->name('admin.room.get'); 
@@ -35,6 +36,8 @@ Route::get('/get_list_booking', 'Admin\BookingController@get')->name('admin.book
 Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
 
 Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.login'); 
+
+Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
 
 Route::middleware(['AuthAdmin:admin'])->group(function () {
     Route::get('/get_status_room', 'Admin\RoomController@get_status')->name('admin.room.get'); 
