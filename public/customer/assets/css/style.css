@@ -1,0 +1,38 @@
+
+/* vendon */
+@import "vendon/owl.carousel.min.css";
+@import "vendon/aos.css";
+@import "vendon/bootstrap3.css";
+
+/* Overview */
+@import "component/style-overview.css";
+
+/* Component */
+@import "component/page-header.css";
+@import "component/page-main.css";
+@import "component/page-footer.css";
+@import "component/I-modal.css";
+ 
+@import "component/I-carousel.css";
+@import "component/I-booking.css";
+@import "component/I-offer.css";
+@import "component/I-place.css";
+@import "component/I-blog.css";
+@import "component/I-testimonials.css";
+@import "component/I-tour.css";
+
+@import "component/I-tour-page.css";
+@import "component/I-blog-page.css";
+@import "component/I-tour-detail.css";
+
+
+/* Responsive */
+@import "responsive.css";
+
+
+
+
+
+
+
+

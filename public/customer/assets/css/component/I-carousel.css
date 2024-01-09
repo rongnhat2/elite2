@@ -1,0 +1,76 @@
+.I-carousel{
+
+}
+.I-carousel .carousel-item-element{
+	width: 100%;
+	height: 100vh; 
+}
+.I-carousel .carousel-item-element img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+#banner-carousel .owl-nav{
+	display: none;
+}
+#banner-carousel .owl-dots{
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#banner-carousel .owl-dot{
+	background: #1e3b66;
+	width: 25px;
+	height: 8px;
+	display: inline-block;
+	font-size: unset;
+	line-height: unset;
+	padding: unset;
+	border-radius: 50px;
+	transition: all .3s ease-in;
+	-webkit-transition: all .3s ease-in;
+	-webkit-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	-moz-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	box-shadow: 0 3px 8px rgba(102, 102, 102, .25);
+	opacity: .5;
+	cursor: pointer;
+	margin: 0 5px;
+}
+#banner-carousel .owl-dot.active{
+	width: 40px;
+	opacity: 1;
+}
+#banner-carousel .owl-dot:hover{
+	width: 40px;
+	opacity: 1;
+}
+
+
+@media only screen and (max-width: 1600px){
+
+}
+@media only screen and (max-width: 1480px){ 
+
+}
+@media only screen and (max-width: 1280px){ 
+
+}
+@media only screen and (max-width: 1024px){
+
+}
+@media only screen and (max-width: 991px){
+    
+}
+@media only screen and (max-width: 767px){
+	.I-carousel .carousel-item-element{
+		width: 100%;
+		height: 60vh; 
+	}
+}
+@media only screen and (max-width: 575px){
+
+} 
+
+

@@ -1,0 +1,104 @@
+.I-blog{
+	padding: 20px 0; 
+}
+.I-blog .blog-wrapper{
+
+}
+.I-blog .blog-wrapper .blog-title{
+	font-size: 28px;
+	font-weight: bold;
+	color: #1a3863;
+	margin: 0 0 5px 0;
+}
+.I-blog .blog-wrapper p.blog-description{
+	font-size: 14px;
+	color: #1a3863;
+	margin: 0 0 20px 0;
+}
+
+
+.I-blog .blog-wrapper .list-item .carousel-item-element{
+	position: relative;
+	display: block;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.I-blog .item-image{
+	width: 100%;
+	padding: 0 0 60% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+}
+.I-blog .item-desctiption-wrapper{
+	padding: 15px;
+}
+.I-blog .item-desctiption-wrapper .item-time{
+	color: #ccc;
+	margin: 0 0 15px 0;
+	font-size: 14px;
+}
+.I-blog .item-desctiption-wrapper .item-title{
+	color: #1a3863;
+	font-weight: 600;
+	font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    -webkit-line-clamp: 2;
+    height: 48px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+	margin: 0 0 15px 0;
+}
+.I-blog .item-desctiption-wrapper .item-desctiption{
+	color: #1a1a1a; 
+	font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 21px;
+    -webkit-line-clamp: 3;
+    height: 63px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+	margin: 0 0 15px 0;
+}
+
+
+#blog-carousel .owl-nav{
+	display: none;
+}
+#blog-carousel .owl-dots{
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#blog-carousel .owl-dot{
+	background: #1e3b66;
+	width: 25px;
+	height: 8px;
+	display: inline-block;
+	font-size: unset;
+	line-height: unset;
+	padding: unset;
+	border-radius: 50px;
+	transition: all .3s ease-in;
+	-webkit-transition: all .3s ease-in;
+	-webkit-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	-moz-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	box-shadow: 0 3px 8px rgba(102, 102, 102, .25);
+	opacity: .5;
+	cursor: pointer;
+	margin: 0 5px;
+}
+#blog-carousel .owl-dot.active{
+	width: 40px;
+	opacity: 1;
+}
+#blog-carousel .owl-dot:hover{
+	width: 40px;
+	opacity: 1;
+}
+

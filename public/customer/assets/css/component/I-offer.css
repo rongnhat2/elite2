@@ -1,0 +1,67 @@
+.I-offer{
+	padding: 20px 0; 
+}
+.I-offer .offer-wrapper{
+
+}
+.I-offer .offer-wrapper .offer-title{
+	font-size: 28px;
+	font-weight: bold;
+	color: #1a3863;
+	margin: 0 0 5px 0;
+}
+.I-offer .offer-wrapper p.offer-description{
+	font-size: 14px;
+	color: #1a3863;
+	margin: 0 0 20px 0;
+}
+.I-offer .offer-wrapper .list-item{
+	
+}
+.I-offer .offer-wrapper .list-item .carousel-item-element{
+	display: block;
+	width: 100%;
+	padding: 0 0 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#offer-carousel .owl-nav{
+	display: none;
+}
+#offer-carousel .owl-dots{
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#offer-carousel .owl-dot{
+	background: #1e3b66;
+	width: 25px;
+	height: 8px;
+	display: inline-block;
+	font-size: unset;
+	line-height: unset;
+	padding: unset;
+	border-radius: 50px;
+	transition: all .3s ease-in;
+	-webkit-transition: all .3s ease-in;
+	-webkit-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	-moz-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	box-shadow: 0 3px 8px rgba(102, 102, 102, .25);
+	opacity: .5;
+	cursor: pointer;
+	margin: 0 5px;
+}
+#offer-carousel .owl-dot.active{
+	width: 40px;
+	opacity: 1;
+}
+#offer-carousel .owl-dot:hover{
+	width: 40px;
+	opacity: 1;
+}
+
+

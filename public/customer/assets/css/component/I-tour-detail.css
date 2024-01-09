@@ -1,0 +1,486 @@
+.I-tour-detail{
+	padding: 90px 0;
+}
+.I-tour-detail .tour-detail-header{
+	font-size: 30px;
+	color: #1a3863; 
+	font-weight: 700;
+	padding: 40px 0;
+}
+.I-tour-detail .tour-detail-prices{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.I-tour-detail .tour-detail-prices .tour-name{
+	font-size: 20px;
+	font-weight: 600;
+}
+.I-tour-detail .tour-detail-prices .tour-prices{
+	display: flex;
+	align-items: center;
+}
+.I-tour-detail .tour-detail-prices .tour-prices .prices-real{
+	font-size: 16px;
+	font-weight: 600;
+	color: #777;
+	margin: 0 10px 0 0;
+}
+.I-tour-detail .tour-detail-prices .tour-prices .prices-real span{
+	text-decoration: line-through;
+}
+.I-tour-detail .tour-detail-prices .tour-prices .prices-discount{
+	font-weight: 600;
+	font-size: 24px;
+	color: #ff6000;
+}
+.I-tour-detail .tour-image-preview{
+	margin: 40px 0;
+}
+.I-tour-detail .infor-wrapper{
+	margin: 0 0 40px 0;
+}
+.I-tour-detail .infor-wrapper .info-header{
+	margin: 0 0 20px 0;
+	background-color: #1a3863;
+	color: #fff;
+	padding: 15px;
+	font-weight: 600;
+	font-size: 20px;
+}
+.I-tour-detail .infor-wrapper .info-content{
+	border: 1px solid #ccc;
+	padding: 15px;
+	max-height: 300px;
+	overflow-y: scroll;
+}
+.noti{
+	text-align: center;
+	color: #f00;
+	margin: 0 0 10px 0;
+}
+.I-tour-detail .infor-wrapper .info-content p.service-item{
+	position: relative;
+	margin: 0 0 5px 0;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0 0 0 18px;
+}
+.I-tour-detail .infor-wrapper .info-content p.service-item::before{
+	position: absolute;
+	top: 7px;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #1a3863;
+	content: "";
+}
+.I-tour-detail .infor-wrapper .info-content p.overview{
+	font-size: 18px;
+	font-weight: 500;
+	text-align: justify;
+}
+.I-tour-detail .infor-wrapper .schedule-content{
+	
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper{
+	margin: 0 0 10px 0;
+	height: 50px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	display: block;
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper.is-open{
+	height: auto;
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper.is-open .schedule-title i{
+	transform: rotate(180deg);
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper .schedule-title{
+	width: 100%;
+	height: 50px;
+	padding: 0 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #f7f7f7;
+	font-size: 16px;
+	cursor: pointer;
+	color: #003580;
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper .schedule-body{
+	padding: 15px;
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper .schedule-body p{
+	position: relative;
+	padding: 0 0 0 15px;
+}
+.I-tour-detail .infor-wrapper .schedule-content .schedule-wrapper .schedule-body p::before{
+	content: "";
+	position: absolute;
+	top: 6px;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	border-radius: 10px;
+	background-color: #1a3863;
+}
+.I-tour-detail .infor-wrapper .start-wrapper{
+	padding: 15px;
+	border: 1px solid #ccc
+}
+.I-tour-detail .infor-wrapper .start-wrapper .start-block{
+	padding: 0 0 15px 0;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid #ccc;
+}
+.I-tour-detail .infor-wrapper .start-wrapper .start-block .block-title{
+	font-size: 20px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+}
+.I-tour-detail .infor-wrapper .start-wrapper .start-block .block-content{
+	margin: 10px 0;
+	padding: 0 0 0 35px;
+}
+.I-tour-detail .infor-wrapper .room-list{
+	overflow: hidden;
+	margin: 0 0 20px 0;
+}
+.I-tour-detail .infor-wrapper .room-list .room-item{
+	float: left;
+	cursor: pointer;
+	margin: 0 10px 10px 0;
+	padding: 10px 15px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+.I-tour-detail .infor-wrapper .room-list .room-item.is-done{
+	border: 1px solid #41d322;
+	background-color: #41d322;
+	color: #fff;
+	font-weight: 600;
+}
+.I-tour-detail .infor-wrapper .room-list .room-item.is-select{
+	border: 1px solid #003580;
+	background-color: #1a3863;
+	color: #fff;
+	font-weight: 600;
+}
+.I-tour-detail .infor-wrapper .room-list .room-confirm{
+	float: left;
+	cursor: pointer;
+	margin: 0 10px 10px 0;
+	padding: 10px 15px;
+	border-radius: 4px;
+	border: 1px solid #003580;
+	background-color: #1a3863;
+	color: #fff;
+	font-weight: 600;
+}
+.I-tour-detail .info-map-wrapper iframe{
+	width: 100%;
+	height: 300px;
+}
+.I-tour-detail .info-content{
+	overflow: hidden;
+}
+.I-tour-detail .info-content .combo-item{
+	float: left;
+	width: 25%;
+	margin: 0 0 10px 0;
+}
+.I-tour-detail .info-content .combo-item img{
+	width: 15px;
+	margin: 0 10px 0 0;
+}
+.I-tour-detail .room-content-wrapper{
+	overflow: hidden;
+}
+.I-tour-detail .room-block{
+	width: 100%;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+	display: flex;
+}
+.I-tour-detail .room-block .room-image{
+	width: 50%;
+	height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.I-tour-detail .room-block .room-content{
+	width: 50%;
+	padding: 15px;
+}
+.I-tour-detail .room-block .room-content .room-name{
+	color: #1a3863;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 0 10px 0;
+}
+.I-tour-detail .room-block .room-content .room-group-name{
+	color: #1a3863;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 5px 0 0;
+}
+.I-tour-detail .room-block .room-content .room-type{
+	margin: 0 0 10px 0;
+}
+.I-tour-detail .room-block .room-content .room-prices{
+	display: flex;
+	align-items: center;
+	color: #e65042;
+	font-size: 20px;
+	font-weight: 600; 
+	margin: 0 0 10px 0;
+}
+.I-tour-detail .room-block .room-content .room-order{
+	padding: 10px 15px;
+	background-color: #1a3863;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600; 
+	display: inline-block;
+}
+
+
+.I-tour-detail .form-sticky{
+	position: sticky; 
+	top: 150px;
+}
+
+
+.I-tour-detail .form-contact{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.I-tour-detail .form-contact .form-header{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #1a3863;
+	color: #fff;
+	font-weight: 600;
+	font-size: 20px;
+}
+.I-tour-detail .form-contact .form-content{
+	padding: 15px 15px 0 15px;
+}
+.I-tour-detail .form-contact .form-content .form-element{
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+.I-tour-detail .form-contact .form-content .form-element input{
+	width: 100%;
+	height: 42px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	padding: 15px;
+}
+.I-tour-detail .form-contact .form-content .form-element textarea{
+	width: 100%;
+	height: 126px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	padding: 15px;
+	resize: none;
+}
+.I-tour-detail .form-contact .form-footer{
+	padding: 0 15px 15px 15px;
+}
+.I-tour-detail .form-contact .form-footer .form-action{
+	width: 100%;
+	border-radius: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #1a3863;
+	color: #fff;
+	font-weight: 600;
+	font-size: 20px;
+	border: none;
+}
+.I-tour-detail .room-discount{
+	color: #777;
+	font-size: 14px;
+	text-decoration: line-through;
+	margin: 0 10px;
+}
+
+.I-tour-detail .form-booking{
+	box-shadow: 0 0 7px 1px #cacaca;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.I-tour-detail .form-booking .form-header{
+	position: relative;
+	width: 100%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+.I-tour-detail .form-booking .form-header img{
+	width: 100%;
+	/*height: 100%;*/
+	object-fit: cover;
+}
+.I-tour-detail .form-booking .form-header .topbg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, #fff, transparent);
+}
+.I-tour-detail .form-booking .form-body{
+	padding: 15px;
+}
+.I-tour-detail .form-booking .form-body .hotel-name{
+	font-size: 20px;
+	font-weight: 600;
+	color: #1a3863;
+	text-align: center;
+}
+.I-tour-detail .form-booking .form-body .hotel-room{
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.I-tour-detail .form-booking .form-body .hotel-element-wrapper{
+	padding: 0 15px;
+	margin: 0 0 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.I-tour-detail .form-booking .form-body .hotel-element-wrapper .element-name{
+	font-weight: 600;
+	color: #1a3863;
+	width: 40%;
+}
+.I-tour-detail .form-booking .form-body .hotel-element-wrapper .element-value{
+	text-align: right;
+	width: 50%;
+}
+.I-tour-detail .form-booking .form-body .hotel-element-people{
+	padding: 0 15px;
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-weight: 600;
+	color: #1a3863;
+}
+.I-tour-detail .form-booking .form-footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 0 0 20px 0;
+}
+.I-tour-detail .form-booking .form-footer .form-action{
+	padding: 10px 15px;
+	border-radius: 4px;
+	background-color: #1a3863;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+
+.I-tour-detail .carousel-item-element{
+	width: 100%;
+	height: 300px; 
+}
+.I-tour-detail .carousel-item-element img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+#image-carousel .owl-nav{
+	display: none;
+}
+#image-carousel .owl-dots{
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#image-carousel .owl-dot{
+	background: #1e3b66;
+	width: 25px;
+	height: 8px;
+	display: inline-block;
+	font-size: unset;
+	line-height: unset;
+	padding: unset;
+	border-radius: 50px;
+	transition: all .3s ease-in;
+	-webkit-transition: all .3s ease-in;
+	-webkit-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	-moz-box-shadow: 0 3px 8px 0 rgba(102, 102, 102, .25);
+	box-shadow: 0 3px 8px rgba(102, 102, 102, .25);
+	opacity: .5;
+	cursor: pointer;
+	margin: 0 5px;
+}
+#image-carousel .owl-dot.active{
+	width: 40px;
+	opacity: 1;
+}
+#image-carousel .owl-dot:hover{
+	width: 40px;
+	opacity: 1;
+}
+
+
+
+
+@media only screen and (max-width: 1600px){
+
+}
+@media only screen and (max-width: 1480px){ 
+
+}
+@media only screen and (max-width: 1280px){ 
+
+}
+@media only screen and (max-width: 1024px){
+
+}
+@media only screen and (max-width: 991px){
+    
+}
+@media only screen and (max-width: 767px){
+	.I-tour-detail .info-content .combo-item{
+		width: 33.3333%;
+	}
+}
+@media only screen and (max-width: 575px){
+	.I-tour-detail .tour-detail-prices{
+		display: block
+	}
+	.I-tour-detail .room-block{
+		display: block;
+	}
+	.I-tour-detail .room-block .room-image{
+		width: 100%;
+	}
+	.I-tour-detail .room-block .room-content{
+		width: 100%;
+	}
+	.I-tour-detail .info-content .combo-item{
+		width: 50%;
+	}
+} 
+

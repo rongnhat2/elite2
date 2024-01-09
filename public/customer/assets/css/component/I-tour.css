@@ -1,0 +1,81 @@
+
+.I-tour.tour-item{
+	position: relative;
+	width: 100%;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+.I-tour.tour-item .item-image{
+	width: 100%;
+	padding: 0 0 60% 0;
+	display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.I-tour.tour-item .item-desctiption{
+	padding: 15px;
+}
+.I-tour.tour-item .item-desctiption .item-name{
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    color: #1a3863;
+    line-height: 20px;
+    -webkit-line-clamp: 2;
+    height: 40px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    display: block;
+    margin: 0 0 15px 0;
+}
+.I-tour.tour-item .item-desctiption .item-time{
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.I-tour.tour-item .item-desctiption .item-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 0 0
+}
+.I-tour.tour-item .item-desctiption .item-price .price-data{
+	text-decoration: line-through;
+	font-size: 14px;
+	opacity: 0.8;
+}
+.I-tour.tour-item .item-desctiption .item-price .price-real{
+	font-size: 18px;
+	display: block;
+	font-weight: 600;
+	color: #ff6000;
+}
+.I-tour.tour-item .item-badge{
+	position: absolute;
+	top: 0;
+	left: -10px;
+	width: 120px;
+	height: 40px;
+	border-radius: 0 40px 0 0;
+	background-color: #f16136;
+	font-weight: 600;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 20px;
+	text-transform: uppercase;
+}
+.I-tour.tour-item .item-badge::before{
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	clip-path: polygon(0 0, 100% 100%, 100% 0);
+	background-color: #f48563;
+	content: "";
+}
