@@ -30,6 +30,7 @@ Route::get('/get_list_review_room', 'Customer\ReviewController@get_one')->name('
 Route::post('/set_review_room', 'Customer\ReviewController@store')->name('customer.review.store'); 
 
 Route::post('/search', 'Admin\TourController@get_search')->name('customer.tour.search'); 
+Route::post('/set_message', 'Customer\BookingController@set_message')->name('customer.booking.set_message'); 
 
 
 Route::middleware(['AuthAdmin:admin'])->group(function () {

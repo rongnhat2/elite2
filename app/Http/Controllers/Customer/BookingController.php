@@ -22,12 +22,14 @@ class BookingController extends Controller
 {
     protected $booking; 
     protected $customer;
-    protected $customer_detail;
+    protected $customer_detail; 
+    protected $message;
 
     public function __construct(Booking $booking, CustomerAuth $customer, CustomerDetail $customer_detail ){
         $this->booking            = new BookingRepository($booking);  
         $this->customer         = new CustomerRepository($customer);
         $this->customer_detail  = new CustomerRepository($customer_detail);
+        $this->message            = new MessageRepository($message);  
     }
     public function get(Request $request){
         $is_user = static::check_token($request); 
@@ -79,6 +81,25 @@ class BookingController extends Controller
             } 
         } 
     } 
+
+    public function set_message(Request $request){
+        // return $request;
+        if ($request->data_name == null || $request->data_email == null || $request->data_telephone == null || $request->data_meta == null) {
+            return $this->booking->send_response("Thiếu thông tin tin nhắn!!", null, 500);
+        }else{
+         $data_item = [ 
+                "name"          => $request->data_name,  
+                "email"         => $request->data_email,  
+                "telephone"     => $request->data_telephone,   
+                "metadata"      => $request->data_meta, 
+            ];
+
+            $item_create = $this->message->create($data_item); 
+
+            return $this->message->send_response("Gửi tin nhắn thành công", null, 201); 
+        } 
+    } 
+
 
     // Kiểm tra token hợp lệ
     public function check_token(Request $request){
