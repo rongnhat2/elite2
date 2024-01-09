@@ -23,6 +23,7 @@ class CustomerRepository extends BaseRepository implements RepositoryInterface
                 ->leftjoin('customer_detail', 'customer_detail.customer_auth_id', '=', 'customer_auth.id')
                 ->get(); 
     }
+
     public function update_trending($id){
         $sql = 'UPDATE customer_auth set view_type = !view_type WHERE id = '.$id;
         DB::select($sql);

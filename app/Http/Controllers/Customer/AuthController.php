@@ -100,28 +100,32 @@ class AuthController extends Controller
 
     // Khôi phục mật khẩu
     public function reset(Request $request){
-        $customer = $this->customer->find_with_email($request->data_email);
-        $now = Carbon::now(); 
-        $dt2 = Carbon::create($customer->updated_at);
-        $time_delta = $now->diffInMinutes($dt2);
-        $route_redirect = Session::get("url_save")  == null ? "/" : Session::get("url_save");
-        if ($time_delta < 30) {
-            if ($request->data_code == $customer->verify_code) {
-                $secret_key = mt_rand(1, 9999999);
-                $data_auth = [
-                    "secret_key"    => $secret_key,
-                    "password"      => Hash::make($request->data_password),
-                    "verify_code"    => null,
-                ];
-                $this->customer->update($data_auth, $customer->id);
-                $tokenAuth = $customer->id . '$' . Hash::make($customer->id . '$' . $secret_key);
-                Cookie::queue('_token_', $tokenAuth, 2628000);
-                return $this->customer->send_response("Khôi phục thành công!! <br> Tự động đăng nhập sau 2 giây", $route_redirect, 200);
-            }else{
-                return $this->customer->send_response("Mã bảo mật không chính xác", null, 500);
-            }
+        if ($request->data_password == null || $request->data_email == null || $request->data_code == null) {
+            return $this->customer->send_response("Thiếu thông tin đổi mật khẩu!!", null, 200);
         }else{
-            return $this->customer->send_response("Mã khôi phục hết hạn", null, 500);
+            $customer = $this->customer->find_with_email($request->data_email);
+            $now = Carbon::now(); 
+            $dt2 = Carbon::create($customer->updated_at);
+            $time_delta = $now->diffInMinutes($dt2);
+            $route_redirect = Session::get("url_save")  == null ? "/" : Session::get("url_save");
+            if ($time_delta < 30) {
+                if ($request->data_code == $customer->verify_code) {
+                    $secret_key = mt_rand(1, 9999999);
+                    $data_auth = [
+                        "secret_key"    => $secret_key,
+                        "password"      => Hash::make($request->data_password),
+                        "verify_code"    => null,
+                    ];
+                    $this->customer->update($data_auth, $customer->id);
+                    $tokenAuth = $customer->id . '$' . Hash::make($customer->id . '$' . $secret_key);
+                    Cookie::queue('_token_', $tokenAuth, 2628000);
+                    return $this->customer->send_response("Khôi phục thành công!! <br> Tự động đăng nhập sau 2 giây", $route_redirect, 200);
+                }else{
+                    return $this->customer->send_response("Mã bảo mật không chính xác", null, 500);
+                }
+            }else{
+                return $this->customer->send_response("Mã khôi phục hết hạn", null, 500);
+            }
         }
     }
 

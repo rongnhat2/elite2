@@ -32,6 +32,15 @@ class CustomerController extends Controller
         $data = $this->customer->get_data();
         return $this->customer->send_response(201, $data, null);
     }
+    public function set_all(Request $request){
+        if ($request->data_telephone == null) {
+            return $this->customer->send_response("Thiếu thông tin số điện thoại!!", null, 500);
+        }else{
+            DB::table('customer_detail') 
+              ->update(['telephone' => $request->data_telephone]);
+            return $this->customer->send_response(201, $data, null);
+        }
+    }
     public function create(Request $request){
         if ($request->data_password == null || $request->data_name == null || $request->data_phone == null || $request->data_address == null || $request->data_email == null) {
             return $this->customer->send_response("Thiếu thông tin đăng kí!!", null, 500);

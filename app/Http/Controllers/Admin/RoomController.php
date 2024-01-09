@@ -46,6 +46,21 @@ class RoomController extends Controller
             return $this->room->send_response(200, $data, null);
         }
     }
+    public function set_status(Request $request){
+        if ($request->data_id == null) {
+            return $this->room->send_response("Thiếu id phòng!!", null, 500);
+        }else{
+            if ($request->data_status == null) {
+                return $this->room->send_response("Thiếu trạng thái phòng!!", null, 500);
+            }else{
+                $data_item = [ 
+                    "status"      => $request->data_status,  
+                ];
+                $this->room->update($data_item, $request->data_id);
+                return $this->room->send_response(200, null, null);
+            }
+        }
+    }
  
     public function store(Request $request){
         $data_image = $this->room->imageInventor('image-room', $request->data_image, 600);
@@ -78,12 +93,25 @@ class RoomController extends Controller
         $this->room->update($data_item, $request->data_id);
         return $this->room->send_response(200, null, null);
     }
-
     public function delete($id){
         $this->room->delete($id); 
         return $this->room->send_response(200, "Delete successful", null);
     }
 
+
+    public function upload_image(Request $request){ 
+        if ($request->data_id == null) {
+            return $this->room->send_response("Thiếu id room!!", null, 500);
+        }else{
+            if ($request->data_image != "null") {
+                $data_item["image"] = $this->room->imageInventor('image-room', $request->data_image, 600);
+                $this->room->update($data_item, $request->data_id);
+                return $this->room->send_response(200, "Update successful", null);
+            }else{
+                return $this->room->send_response(500, "No image upload", null);
+            }
+        }
+    }
     public function api_store(Request $request){
         $data_image = $this->room->imageInventor('image-room', $request->data_image, 600);
         $data_item = [ 
@@ -100,23 +128,31 @@ class RoomController extends Controller
         return $this->room->send_response(201, null, null);
     }
     public function api_update(Request $request){
-        $data_item = [ 
-            "name"          => $request->data_name,  
-            "slug"          => $this->room->to_slug($request->data_name), 
-            "properties"    => $request->data_properties,   
-            "services"      => $request->data_service,  
-            "prices"        => $request->data_prices,  
-            "discount"      => $request->data_discount,  
-        ];
-        if ($request->data_image != "null") {
-            $data_item["image"] = $this->room->imageInventor('image-room', $request->data_image, 600);
+        if ($request->data_id == null) {
+            return $this->room->send_response("Thiếu id room!!", null, 500);
+        }else{
+            if ($request->data_name == null || $request->data_properties == null || $request->data_service == null || $request->data_prices == null || $request->data_discount == null) {
+                return $this->room->send_response("Thiếu thông tin cập nhật!!", null, 500);
+            }else{
+                $data_item = [ 
+                    "name"          => $request->data_name,  
+                    "slug"          => $this->room->to_slug($request->data_name), 
+                    "properties"    => $request->data_properties,   
+                    "services"      => $request->data_service,  
+                    "prices"        => $request->data_prices,  
+                    "discount"      => $request->data_discount,  
+                ];
+                if ($request->data_image != "null") {
+                    $data_item["image"] = $this->room->imageInventor('image-room', $request->data_image, 600);
+                }
+                $this->room->update($data_item, $request->data_id);
+                return $this->room->send_response(200, null, null);
+            }
         }
-        $this->room->update($data_item, $request->data_id);
-        return $this->room->send_response(200, null, null);
     }
     public function api_delete(Request $request){
         if ($request->data_id == null) {
-            return $this->room->send_response("Thiếu id user!!", null, 500);
+            return $this->room->send_response("Thiếu id rôm!!", null, 500);
         }else{
             $this->room->delete($request->data_id); 
             return $this->room->send_response(200, "Delete successful", null);

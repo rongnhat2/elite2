@@ -32,21 +32,31 @@ Route::post('/set_message', 'Customer\ReviewController@store')->name('customer.r
 Route::post('/search', 'Admin\TourController@get_search')->name('customer.tour.search'); 
 
 
-Route::get('/get_list_location', 'Admin\HotelController@get')->name('admin.room.get'); 
-Route::get('/get_detail_location', 'Admin\HotelController@find_one')->name('admin.room.get'); 
-
-Route::get('/get_list_booking', 'Admin\BookingController@get')->name('admin.booking.get'); 
-Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
-
-Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.login'); 
-
-Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
-
 Route::middleware(['AuthAdmin:admin'])->group(function () {
     Route::get('/get_status_room', 'Admin\RoomController@get_status')->name('admin.room.get'); 
+    Route::put('/set_status_room', 'Admin\RoomController@set_status')->name('admin.room.set'); 
+
     Route::delete('/delete_room', 'Admin\RoomController@delete')->name('admin.room.delete'); 
 
+    Route::post('/upload_image_room', 'Admin\RoomController@upload_image')->name('admin.image.post'); 
+
     Route::get('/get_list_user', 'Admin\CustomerController@get_all')->name('admin.user.get'); 
+    Route::post('/set_list_user', 'Admin\CustomerController@set_all')->name('admin.user.set'); 
     Route::post('/add_user', 'Admin\CustomerController@create')->name('admin.user.create'); 
     Route::delete('/delete_user', 'Admin\CustomerController@delete')->name('admin.user.create'); 
+
+    Route::put('/edit_room', 'Customer\RoomController@api_update')->name('admin.room.api_update'); 
+
+
+    Route::get('/get_list_location', 'Admin\HotelController@get')->name('admin.room.get'); 
+    Route::get('/get_detail_location', 'Admin\HotelController@find_one')->name('admin.room.get'); 
+
+    Route::get('/get_list_booking', 'Admin\BookingController@get')->name('admin.booking.get'); 
+    Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
+
+    Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.login'); 
+
+    Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
+
+
 });

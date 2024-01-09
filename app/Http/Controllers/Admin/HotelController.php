@@ -29,8 +29,12 @@ class HotelController extends Controller
         return $this->hotel->send_response(201, $data, null);
     }
     public function get_one($id){
-        $data       = $this->hotel->get_one($id); 
-        return $this->hotel->send_response(200, $data, null);
+        if ($id == null) {
+            return $this->room->send_response("Thiếu id phòng!!", null, 500);
+        }else{
+            $data       = $this->hotel->get_one($id); 
+            return $this->hotel->send_response(200, $data, null);
+        }
     }
     public function find_one(Request $request){
         if ($request->data_id == null) {
