@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Customer\DisplayController@index')->name('customer.index');
+Route::get('/login', 'Customer\DisplayController@login')->name('customer.login');
 Route::get('category', 'Customer\DisplayController@category')->name('customer.category');
 Route::get('tour', 'Customer\DisplayController@tour')->name('customer.tour');
 Route::get('tour-detail/{id}-{slug}', 'Customer\DisplayController@tour_detail')->name('customer.tour_detail');

@@ -26,6 +26,9 @@ Route::get('/get_list_booking-room', 'Customer\BookingController@get')->name('cu
 Route::post('/booking-room', 'Customer\BookingController@create')->name('customer.booking.create'); 
 Route::post('/cancel_booking', 'Customer\BookingController@delete')->name('customer.booking.delete'); 
 
+Route::get('/get_list_review_room', 'Customer\ReviewController@get_one')->name('customer.booking.get_one'); 
+Route::post('/set_message', 'Customer\ReviewController@store')->name('customer.review.store'); 
+
 Route::post('/search', 'Admin\TourController@get_search')->name('customer.tour.search'); 
 
 

@@ -49,7 +49,7 @@
 							<?php if ($customer_data['is_login']): ?>  
                             	Xin chào <?php echo $customer_data['username'] ?>
                             <?php else: ?>
-                            	Bạn cần đăng nhập để thực hiện tính năng này: <a href="/login">Đăng nhập ngay</a>
+                            	<p style="text-align: center;">Bạn cần đăng nhập: <a href="/login">Đăng nhập ngay</a></p>
                             <?php endif ?> 
 							<div class="form-wrapper">
 								<div class="line"></div>
