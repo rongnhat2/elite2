@@ -17,8 +17,8 @@ class Booking extends Migration
             $table->increments('id');
             $table->integer('customer_id');
             $table->integer('room_id');
-            $table->timestamp('time_start');
-            $table->timestamp('time_end');
+            $table->string('time_start');
+            $table->string('time_end');
             $table->integer('date');
             $table->integer('prices');
             $table->integer('status')->default(0);

@@ -28,7 +28,7 @@
 					<div class="booking-form">
 						<div class="form-book-wrapper">
 							<h3>Thông tin đặt lịch</h3>
-							<div class="form-wrapper">
+							{{-- <div class="form-wrapper">
 								<div class="form-title">Họ và tên </div>
 								<div class="form-content">
 									<input type="text" class="data-name">
@@ -45,7 +45,12 @@
 								<div class="form-content">
 									<input type="text" class="data-email">
 								</div>
-							</div>
+							</div> --}}
+							<?php if ($customer_data['is_login']): ?>  
+                            	Xin chào <?php echo $customer_data['username'] ?>
+                            <?php else: ?>
+                            	Bạn cần đăng nhập để thực hiện tính năng này: <a href="/login">Đăng nhập ngay</a>
+                            <?php endif ?> 
 							<div class="form-wrapper">
 								<div class="line"></div>
 							</div>
