@@ -16,6 +16,10 @@ class AdminRepository extends BaseRepository implements RepositoryInterface
         $this->model = $model;
     }
 
+    public function get_all(){
+        return DB::table('admin')
+                ->get(); 
+    }
     public function checkEmailPassword($request){
         $user = $this->model->where('email', '=', $request->email)->first();
         if ($user) {

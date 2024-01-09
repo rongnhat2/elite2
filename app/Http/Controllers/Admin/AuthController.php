@@ -40,9 +40,45 @@ class AuthController extends Controller
             return $this->admin->send_response("Tên tài khoản hoặc mật khẩu không chính xác", "", 500); 
         }
     }
-    public function register(){
-        // Contact to update Function
+    public function change_status_host(Request $request){
+        if ($request->data_id == null) {
+            return $this->admin->send_response("Thiếu id Host!!", null, 500);
+        }else{
+            if ($request->data_status == null) {
+                return $this->admin->send_response("Thiếu trạng Host!!", null, 500);
+            }else{
+                $data_item = [ 
+                    "status"      => $request->data_status,  
+                ];
+                $this->admin->update($data_item, $request->data_id);
+                return $this->admin->send_response(200, null, null);
+            }
+        }
     }
+    public function get(){
+        $data = $this->admin->get_all();
+        return $this->admin->send_response(201, $data, null);
+    }
+    // Đăng ký
+    public function register(Request $request){  
+        if ($request->data_password == null || $request->data_email == null) {
+            return $this->admin->send_response("Thiếu thông tin đăng kí!!", null, 500);
+        }else{
+            if ($this->admin->check_email($request->data_email)) {
+                return $this->admin->send_response("Email đã tồn tại!!", null, 500);
+            }else{
+                $secret_key = mt_rand(1, 9999999);
+                $data_auth = [
+                    "secret_key"    => $secret_key,
+                    "email"         => $request->data_email,
+                    "password"      => Hash::make($request->data_password), 
+                ];
+                $auth_register = $this->admin->create($data_auth); 
+                return $this->admin->send_response("Đăng kí thành công!!", "/", 201);
+            }
+        }
+    }
+
     public function logout(){
         Cookie::queue(Cookie::forget('_token__'));
         return redirect()->route('admin.login')->with('success', 'Đăng xuất thành công');  

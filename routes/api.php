@@ -27,12 +27,17 @@ Route::post('/booking-room', 'Customer\BookingController@create')->name('custome
 Route::post('/cancel_booking', 'Customer\BookingController@delete')->name('customer.booking.delete'); 
 
 Route::get('/get_list_review_room', 'Customer\ReviewController@get_one')->name('customer.booking.get_one'); 
-Route::post('/set_message', 'Customer\ReviewController@store')->name('customer.review.store'); 
+Route::post('/set_review_room', 'Customer\ReviewController@store')->name('customer.review.store'); 
 
 Route::post('/search', 'Admin\TourController@get_search')->name('customer.tour.search'); 
 
 
 Route::middleware(['AuthAdmin:admin'])->group(function () {
+    Route::get('/get_list_host', 'Admin\AuthController@get')->name('admin.auth.get'); 
+    Route::post('/sign_host', 'Admin\AuthController@register')->name('admin.auth.register'); 
+    Route::put('/change_status_host', 'Admin\RoomController@change_status_host')->name('admin.room.set'); 
+
+
     Route::get('/get_status_room', 'Admin\RoomController@get_status')->name('admin.room.get'); 
     Route::put('/set_status_room', 'Admin\RoomController@set_status')->name('admin.room.set'); 
 
