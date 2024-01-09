@@ -33,7 +33,7 @@
                     <span class="title">Hotel</span>
                 </a>
             </li>
-            <li class="nav-item dropdown combo-group">
+            {{-- <li class="nav-item dropdown combo-group">
                 <a class="dropdown-toggle combo" href="{{ route("admin.combo.index") }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-gateway"></i>
@@ -48,7 +48,7 @@
                     </span>
                     <span class="title">Du thuyền</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item dropdown news-group">
                 <a class="dropdown-toggle news" href="{{ route("admin.news.index") }}">
                     <span class="icon-holder">

@@ -30,6 +30,7 @@ Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.
 
 Route::middleware(['AuthAdmin:admin'])->group(function () {
     Route::get('/get_status_room', 'Admin\RoomController@get_status')->name('admin.room.get'); 
+    Route::delete('/delete_room', 'Admin\RoomController@delete')->name('admin.room.delete'); 
 
     Route::get('/get_list_user', 'Admin\CustomerController@get_all')->name('admin.user.get'); 
     Route::post('/add_user', 'Admin\CustomerController@create')->name('admin.user.create'); 

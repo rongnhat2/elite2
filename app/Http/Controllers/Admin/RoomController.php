@@ -78,6 +78,12 @@ class RoomController extends Controller
         $this->room->update($data_item, $request->data_id);
         return $this->room->send_response(200, null, null);
     }
+
+    public function delete($id){
+        $this->room->delete($id); 
+        return $this->room->send_response(200, "Delete successful", null);
+    }
+
     public function api_store(Request $request){
         $data_image = $this->room->imageInventor('image-room', $request->data_image, 600);
         $data_item = [ 
@@ -108,11 +114,13 @@ class RoomController extends Controller
         $this->room->update($data_item, $request->data_id);
         return $this->room->send_response(200, null, null);
     }
-
-    public function delete($id){
-        $this->room->delete($id); 
-        return $this->room->send_response(200, "Delete successful", null);
+    public function api_delete(Request $request){
+        if ($request->data_id == null) {
+            return $this->room->send_response("Thiếu id user!!", null, 500);
+        }else{
+            $this->room->delete($request->data_id); 
+            return $this->room->send_response(200, "Delete successful", null);
+        }
     }
-
     
 }
