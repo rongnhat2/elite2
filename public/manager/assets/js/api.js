@@ -8,6 +8,7 @@ const Api = {
     Yacht: {},
     YachtRoom: {},
     News: {},
+    Booking: {},
 
     Image: {},
     
@@ -322,6 +323,36 @@ const Api = {
     });
 })();
 
+
+//Booking
+(() => {
+    Api.Booking.GetAll = () => $.ajax({
+        url: `/api/get_list_booking`,
+        method: 'GET',
+    }); 
+    Api.Booking.Store = (data) => $.ajax({
+        url: `/apip/booking/store`,
+        method: 'POST',
+        data: data,
+        contentType: false,
+        processData: false,
+    });
+    Api.Booking.getOne = (id) => $.ajax({
+        url: `/apip/booking/get-one/${id}`,
+        method: 'GET',
+    });
+    Api.Booking.Update = (data) => $.ajax({
+        url: `/apip/booking/update`,
+        method: 'POST',
+        data: data,
+        contentType: false,
+        processData: false,
+    });
+    Api.Booking.Delete = (id) => $.ajax({
+        url: `/apip/booking/delete/${id}`,
+        method: 'GET',
+    });
+})();
 
 
 

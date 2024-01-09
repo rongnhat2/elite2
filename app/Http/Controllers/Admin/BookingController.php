@@ -21,6 +21,9 @@ class BookingController extends Controller
     public function __construct(Booking $booking ){
         $this->booking            = new BookingRepository($booking);  
     }
+    public function index(){
+        return view("admin.manager.booking");
+    }
     public function get(Request $request){
         $data = $this->booking->get_all();
         return $this->booking->send_response(201, $data, null);
@@ -47,17 +50,9 @@ class BookingController extends Controller
         return $this->booking->send_response(201, null, null);
     }
     public function update(Request $request){
-        $data_item = [ 
-            "name"          => $request->data_name,  
-            "slug"          => $this->booking->to_slug($request->data_name), 
-            "properties"    => $request->data_properties,   
-            "services"      => $request->data_service,  
-            "prices"        => $request->data_prices,  
-            "discount"      => $request->data_discount,  
-        ];
-        if ($request->data_image != "null") {
-            $data_item["image"] = $this->booking->imageInventor('image-room', $request->data_image, 600);
-        }
+        $data_item = [  
+            "status"      => $request->data_booking,  
+        ]; 
 
         $this->booking->update($data_item, $request->data_id);
         return $this->booking->send_response(200, null, null);

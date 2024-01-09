@@ -27,7 +27,7 @@ class BookingRepository extends BaseRepository implements RepositoryInterface
     }
 
     public function get_one($id){
-        return DB::table('combo')
+        return DB::table('booking')
                 ->where("id", "=", $id)
                 ->first(); 
     }

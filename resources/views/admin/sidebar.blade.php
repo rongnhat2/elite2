@@ -33,6 +33,14 @@
                     <span class="title">Hotel</span>
                 </a>
             </li>
+            <li class="nav-item dropdown booking-group">
+                <a class="dropdown-toggle booking" href="{{ route("admin.booking.index") }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-gateway"></i>
+                    </span>
+                    <span class="title">Booking</span>
+                </a>
+            </li>
             {{-- <li class="nav-item dropdown combo-group">
                 <a class="dropdown-toggle combo" href="{{ route("admin.combo.index") }}">
                     <span class="icon-holder">

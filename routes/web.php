@@ -91,6 +91,9 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         
         Route::get('/', 'Admin\DisplayController@index')->name('admin.index');
 
+        Route::prefix('booking')->group(function () {
+            Route::get('/', 'Admin\BookingController@index')->name('admin.booking.index');
+        });
         Route::prefix('location')->group(function () {
             Route::get('/', 'Admin\LocationController@index')->name('admin.location.index');
         });
@@ -189,6 +192,14 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('/get-one/{id}', 'Admin\NewsController@get_one')->name('admin.news.get_one');
             Route::post('/update', 'Admin\NewsController@update')->name('admin.news.update');
             Route::get('/delete/{id}', 'Admin\NewsController@delete')->name('admin.news.delete');
+        });
+
+        Route::prefix('booking')->group(function () {
+            Route::get('/get', 'Admin\BookingController@get')->name('admin.booking.get');
+            Route::post('/store', 'Admin\BookingController@store')->name('admin.booking.store');
+            Route::get('/get-one/{id}', 'Admin\BookingController@get_one')->name('admin.booking.get_one');
+            Route::post('/update', 'Admin\BookingController@update')->name('admin.booking.update');
+            Route::get('/delete/{id}', 'Admin\BookingController@delete')->name('admin.booking.delete');
         });
 
     });
