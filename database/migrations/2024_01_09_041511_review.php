@@ -13,7 +13,16 @@ class Review extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('review', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('customer_id');
+            $table->integer('room_id');
+            $table->integer('rate');
+            $table->string('comment');
+            $table->integer('status')->default(0);
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class Review extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('review');
     }
 }
