@@ -33,6 +33,9 @@ Route::post('/search', 'Admin\TourController@get_search')->name('customer.tour.s
 Route::post('/set_message', 'Customer\BookingController@set_message')->name('customer.booking.set_message'); 
 
 
+    Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.login'); 
+
+
 Route::middleware(['AuthAdmin:admin'])->group(function () {
     Route::get('/get_list_host', 'Admin\AuthController@get')->name('admin.auth.get'); 
     Route::post('/sign_host', 'Admin\AuthController@register')->name('admin.auth.register'); 
@@ -59,9 +62,6 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
 
     Route::get('/get_list_booking', 'Admin\BookingController@get')->name('admin.booking.get'); 
     Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
-
-    Route::post('/login_admin', 'Admin\AuthController@api_login')->name('admin.auth.login'); 
-
     Route::post('/set_payment', 'Admin\BookingController@payment')->name('admin.booking.payment'); 
 
 
